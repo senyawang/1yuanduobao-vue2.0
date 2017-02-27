@@ -1,0 +1,125 @@
+
+.vue-select{
+    visibility:hidden;
+    position: fixed;
+    width:100%;
+    bottom:-9999px;
+    left:-9999px;
+    background-color: #fff;
+    -webkit-touch-action:none;
+    &.vue-select-show{
+        visibility:visible;
+        bottom:0;
+        left:0;
+        z-index:10001;
+    }
+}
+
+.vue-select-mask{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:10000;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.5);
+}
+
+
+.vue-select-whl{
+    height:200px;
+}
+.vue-select-l{
+    position: absolute;
+    height:40px;
+    margin:-21px .25em 0 .25em;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #4eccc4;
+    border-bottom: 1px solid #4eccc4;
+    pointer-events: none;
+}
+.vue-select-wrapper{
+    overflow:hidden;
+    height:inherit;
+}
+.vue-select-container{
+    display:table;
+    table-layout:fixed;
+    width:100%;
+    // max-width:270px;
+    margin:0 auto;
+    padding:10px;
+}
+
+.vue-select-scroll{
+    padding:80px 0;
+}
+
+.vue-select-list{
+    position: relative;
+    display:table-cell;
+    vertical-align:top;
+    width:100%;
+    overflow:hidden;
+    
+}
+
+.vue-select-item{
+    width: 100%;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.vue-select-selected{
+    font-weight:700;
+    font-size:16px;
+}
+
+.vue-select-actions{
+    display:table;
+    table-layout:fixed;
+    width:100%;
+    margin:0 auto;
+    padding:10px;
+
+    .vue-select-btn-left{
+        position: relative;
+        display:table-cell;
+        vertical-align:top;
+        width:100%;
+        overflow:hidden;
+        text-align:left;
+
+        >span{
+            border: 1px solid #a3a4a9;
+            padding: 5px 2em;
+            display: inline-block;
+        }
+    }
+
+    .vue-select-btn-right{
+        position: relative;
+        display:table-cell;
+        vertical-align:top;
+        width:100%;
+        overflow:hidden;
+        text-align:right;
+
+        >span{
+            border: 1px solid #9691f3;
+            padding: 5px 2em;
+            display: inline-block;
+            color: #fff;
+            background-color: #9691f3;
+        }
+    }
+    
+
+}

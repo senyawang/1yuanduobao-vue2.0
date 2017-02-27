@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>字典排序</title>
+<style type="text/css">
+ #form1{width:500px;height:400px; margin:0 auto;}
+ #area{ width:400px;height:300px;}
+</style>
+</head>
+<body>
+ <form id="form1" action="#" target="_self" method="post">
+  <fieldset>
+   <label>请输入你想要排序的字符：(可以在一行输入无需分隔符)</label><br/>
+   <label>输入框:</label><input type="text" value="" id="text1"/>
+   <input type="button" value="点击排序" onclick="fun()"/>
+   <input type="reset" value="清空"/><br/>
+   <textarea id="area"></textarea>
+  </fieldset>
+ </form>
+<script type="text/javascript">
+var strGB = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklopqrstmnuvwxyz";
+ function fun()
+ { 
+  var text1 = document.getElementById("text1").value;
+  var area1 = document.getElementById("area");
+  //alert(text1);
+  //alert(area1.value);
+  var ss="";
+  var textArray = text1.split(",");
+  var textArray1 = new Array();
+  for(var i=0;i<textArray.length;i++)
+  {
+   textArray1[i]=strGB.indexOf(textArray[i]);
+   //ss= ss+textArray1[i]+" ";
+  }
+  var t;
+  for(var j=0;j<=textArray.length;j++)
+  {
+   for(var i = 0;i<textArray.length;i++)
+   if(textArray1[i]>textArray1[i+1])
+   {
+    t=textArray[i];
+    textArray[i]=textArray[i+1];
+    textArray[i+1] = t;
+    t=textArray1[i];
+    textArray1[i]=textArray1[i+1];
+    textArray1[i+1] = t;
+   }
+
+  }
+  ss = ss +"\n"+textArray;
+  //ss = ss +"\n"+textArray1;
+  area1.value = ss;
+  
+ }
+
+</script>
+</body>
+</html>
